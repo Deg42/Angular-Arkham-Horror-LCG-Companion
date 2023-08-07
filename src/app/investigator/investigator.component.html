@@ -1,0 +1,28 @@
+<div>
+    <mat-form-field>
+        <mat-label>Investigador</mat-label>
+        <mat-select [(value)]="selectedInvestigator" (selectionChange)="onchange()">
+            <mat-option *ngFor="let investigator of investigators" [value]="investigator">{{investigator.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="avatar" [style.background]="background">
+        <h2>{{selectedInvestigator ? selectedInvestigator.name : ""}}</h2>
+    </div>
+    <div class="counter-container">
+        <div class="counter-item counter-damage">
+            <button>+</button>
+            <h2>99</h2>
+            <button>-</button>
+        </div>
+        <div class="counter-item counter-horror">
+            <button>+</button>
+            <h2>99</h2>
+            <button>-</button>
+        </div>
+        <div class="counter-item counter-resources">
+            <button>+</button>
+            <h2>99</h2>
+            <button>-</button>
+        </div>
+    </div>
+</div>
