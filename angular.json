@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-Arkham-Horror-LGC-Companion": {
+    "angular-Arkham-Horror-LCG-Companion": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-arkham-horror-lgc-companion",
+            "outputPath": "dist/angular-arkham-horror-lcg-companion",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-Arkham-Horror-LGC-Companion:build:production"
+              "browserTarget": "angular-Arkham-Horror-LCG-Companion:build:production"
             },
             "development": {
-              "browserTarget": "angular-Arkham-Horror-LGC-Companion:build:development"
+              "browserTarget": "angular-Arkham-Horror-LCG-Companion:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-Arkham-Horror-LGC-Companion:build"
+            "browserTarget": "angular-Arkham-Horror-LCG-Companion:build"
           }
         },
         "test": {
