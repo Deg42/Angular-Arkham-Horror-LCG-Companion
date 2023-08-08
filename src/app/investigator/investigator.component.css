@@ -1,47 +1,13 @@
 mat-form-field {
-    width: 150px;
+    width: 175px;
 }
 
 .avatar {
-    /* background: no-repeat url(../../assets/img/investigators/SkidsOTooleToken.png); */
     background-size: cover;
     display: flex;
-    width: 150px;
-    height: 200px;
+    width: 175px;
+    height: 210px;
     align-items: flex-end;
     text-align: right;
     padding: 0;
-}
-
-/* -- */
-
-.counter-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 3px 0px;
-    background-position: center center !important;
-    background-size: contain !important;
-    width: 100%;
-    height: 50px;
-}
-
-
-
-button {
-    height: 100%;
-}
-
-.counter-damage {
-    background: no-repeat url(../../assets/img/counters/DamageCounter.png);
-
-}
-
-.counter-horror {
-    background: no-repeat url(../../assets/img/counters/HorrorCounter.png);
-
-}
-
-.counter-resources {
-    background: no-repeat url(../../assets/img/counters/ResourcesCounter.png);
 }

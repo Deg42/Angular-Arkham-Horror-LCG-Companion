@@ -1,0 +1,41 @@
+.counter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0px;
+    background-position: center center !important;
+    background-size: contain !important;
+    height: 3.5em;
+}
+
+button {
+    /* height: 100%; */margin: 0px 10px;
+}
+
+span {
+    font: normal small-caps bold 1.25em/0.5em Georgia, serif;
+    color: var(--parchment);
+    text-shadow: 2px 0 var(--prussian-blue), -2px 0 var(--prussian-blue), 0 2px var(--prussian-blue), 0 -2px var(--prussian-blue),
+        1px 1px var(--prussian-blue), -1px -1px var(--prussian-blue), 1px -1px var(--prussian-blue), -1px 1px var(--prussian-blue);
+}
+
+.counter-damage {
+    background: no-repeat url(../../assets/img/counters/DamageCounter.png);
+    background-position-x: 52% !important;
+}
+
+.counter-horror {
+    background: no-repeat url(../../assets/img/counters/HorrorCounter.png);
+}
+
+.counter-horror>span {
+    padding-bottom: 10px;
+}
+
+.counter-resources {
+    background: no-repeat url(../../assets/img/counters/ResourcesCounter.png);
+}
+
+.counter-resources>span {
+    padding-bottom: 5px;
+}

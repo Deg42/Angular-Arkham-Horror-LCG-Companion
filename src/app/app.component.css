@@ -1,14 +1,29 @@
-section {
+mat-toolbar {
+    margin-bottom: 5px;
+}
+
+mat-toolbar>* {
+    flex: 1 1 auto;
+    width: 0;
+}
+
+.button-container{
+    display: inherit;
+    justify-content: flex-end;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .grid-container {
-    position: relative;
     display: grid;
+    position: relative;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
+    margin-bottom: 5px;
 }
 
 app-investigator {
