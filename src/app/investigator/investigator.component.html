@@ -1,6 +1,6 @@
 <mat-form-field>
     <mat-label>Investigador</mat-label>
-    <mat-select class="accent" [(value)]="selectedInvestigator" (selectionChange)="onchange()">
+    <mat-select [(value)]="selectedInvestigator" (selectionChange)="onchange()">
         <mat-option *ngFor="let investigator of investigators" [value]="investigator">{{investigator.name}}</mat-option>
     </mat-select>
 </mat-form-field>

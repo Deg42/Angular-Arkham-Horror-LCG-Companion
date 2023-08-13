@@ -1,1 +1,21 @@
-<div>caos works!</div>
+<div class="caos-container">
+    <div class="caos-utility">
+        <span class="caption">Dificultad</span>
+        <div class="caos-difficulty">
+            <mat-select name="Dificultad" placeholder="--">
+                <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">{{difficulty}}</mat-option>
+            </mat-select>
+        </div>
+        <span class="caption">Historial</span>
+        <div class="caos-history">
+            <img src="../../assets/img/chaosBag/ChaosMinus1.png" alt="">
+            <img src="../../assets/img/chaosBag/ChaosSkull.png" alt="">
+            <img src="../../assets/img/chaosBag/Chaos0.png" alt="">
+        </div>
+    </div>
+    <div class="caos-reveal">
+        <span class="caption">Ficha de caos</span>
+        <button mat-fab color="primary"><mat-icon>swipe_up</mat-icon></button>
+    </div>
+    <div class="caos-token"></div>
+</div>

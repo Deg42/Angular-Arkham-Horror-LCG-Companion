@@ -24,3 +24,8 @@ h2 {
     color: var(--parchment);
     text-shadow: -1px 0 var(--prussian-blue), 0 1px var(--prussian-blue), 1px 0 var(--prussian-blue), 0 -1px var(--prussian-blue);
 }
+
+.caption {
+    font-size: small;
+    font-weight: bold;
+}

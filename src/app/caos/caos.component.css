@@ -1,5 +1,73 @@
-div{
-    border: 2px solid black;
-    width: 380px;
-    height: 9em;
+.caos-container {
+    display: flex;
+    padding: .25em;
+    justify-content: space-around;
+    height: 125px;
+    column-gap: 5px;
+    background-color: var(--pearl);
+    box-shadow: 3px 3px 2px #AAAAAA;
 }
+
+.caos-container>* {
+    display: flex;
+    width: 122px;
+}
+
+.caos-utility {
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: space-evenly;
+}
+
+.caos-difficulty {
+    display: flex;
+    flex-direction: column;
+    width: 108%;
+    background-color: #cec8a8;
+    margin-left: -.25em;
+}
+
+::ng-deep .mat-mdc-select-trigger>*  {
+    margin: 0 10px;
+}
+
+.caos-history {
+    display: flex;
+    flex-direction: row;
+    width: 108%;
+    column-gap: 1px;
+    background-color: #cec8a8;
+    margin-left: -.25em;
+    padding: 2px 0;
+}
+
+.caos-history>img:nth-child(1) {
+    opacity: 0.5;
+}
+
+.caos-history>img:nth-child(2) {
+    opacity: 0.75;
+}
+
+.caos-history>img {
+    width: 40px;
+}
+
+.caos-reveal {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around !important;
+    border-left: 2px groove var(--pearl);
+}
+
+.caos-reveal>* {
+    margin-bottom: 20px;
+}
+
+.caos-token {
+    background: no-repeat url("../../assets/img/chaosBag/ChaosElderSign.png");
+    background-size: 110px;
+    background-position: center;
+}
+

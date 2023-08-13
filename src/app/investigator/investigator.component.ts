@@ -7,6 +7,7 @@ import { Investigator } from '../model/investigator.interface';
   styleUrls: ['./investigator.component.css']
 })
 export class InvestigatorComponent implements OnInit {
+  
   investigators: Investigator[] = [];
   selectedInvestigator: Investigator | undefined;
   background: String = "";
