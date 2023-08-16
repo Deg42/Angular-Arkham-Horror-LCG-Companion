@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Investigator } from '../model/investigator.interface';
+
 
 @Component({
   selector: 'app-investigator',
@@ -7,24 +7,21 @@ import { Investigator } from '../model/investigator.interface';
   styleUrls: ['./investigator.component.css']
 })
 export class InvestigatorComponent implements OnInit {
-  
-  investigators: Investigator[] = [];
-  selectedInvestigator: Investigator | undefined;
+
+
+  investigators: string[] = [
+    "Roland Banks",
+    "Agnes Baker",
+    "\"Malasombra\" O\'Toole",
+    "Daisy Walker",
+    "Wendy Adams"
+  ];
+  selectedInvestigator: string = "";
   background: String = "";
 
   ngOnInit(): void {
-    this.investigators = [
-      { name: "Roland Banks", image: "RolandBanks" },
-      { name: "Agnes Baker", image: "AgnesBaker" },
-      { name: "\"Malasombra\" O\'Toole", image: "SkidsOToole" },
-      { name: "Daisy Walker", image: "DaisyWalker" },
-      { name: "Wendy Adams", image: "WendyAdams" }
-    ]
-
+    this.background = "url(../../assets/img/investigators/" + this.selectedInvestigator.replace(/['"\s]/g, '') + "Token.png) no-repeat";
   }
 
-  onchange(): void {
-    this.background = "url(../../assets/img/investigators/" + this.selectedInvestigator!.image + "Token.png) no-repeat";
-  }
 
 }

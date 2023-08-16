@@ -1,4 +1,5 @@
-mat-form-field {
+.avatar-select {
+    background-color: var(--sage);
     width: 175px;
 }
 

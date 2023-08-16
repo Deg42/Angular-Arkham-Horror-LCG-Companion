@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaosComponent implements OnInit {
 
-  difficulties: String[] = []
-  selectedDifficulty: String = ""
-  chaosBag: String[] = [];
+  difficulties: string[] = []
+  selectedDifficulty: string = ""
+  chaosBag: string[] = [];
 
   ngOnInit(): void {
     this.difficulties = ["Fácil", "Normal", "Difícil", "Experto"];
