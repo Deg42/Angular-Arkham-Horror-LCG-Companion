@@ -66,8 +66,7 @@
 }
 
 .caos-token {
-    background: no-repeat url("../../assets/img/chaosBag/ChaosElderSign.png");
+    background: no-repeat;
     background-size: 110px;
     background-position: center;
 }
-
