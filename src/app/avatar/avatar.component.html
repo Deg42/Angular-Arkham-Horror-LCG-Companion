@@ -1,0 +1,8 @@
+<div class="avatar-select">
+    <mat-select [(value)]="selectedInvestigator" (selectionChange)="ngOnInit()" placeholder="Selecciona...">
+        <mat-option *ngFor="let investigator of investigators" [value]="investigator">{{investigator}}</mat-option>
+    </mat-select>
+</div>
+<div class="avatar" [style.background]="background">
+    <h2>{{selectedInvestigator}}</h2>
+</div>

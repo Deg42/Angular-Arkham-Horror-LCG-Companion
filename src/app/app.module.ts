@@ -13,13 +13,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { CounterComponent } from './counter/counter.component';
 import { CaosComponent } from './caos/caos.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InvestigatorComponent,
     CounterComponent,
-    CaosComponent
+    CaosComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,

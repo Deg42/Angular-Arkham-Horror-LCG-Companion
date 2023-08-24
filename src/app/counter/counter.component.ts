@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EventService } from '../service/event.service';
 
 @Component({
   selector: 'app-counter',
@@ -7,23 +8,31 @@ import { Component } from '@angular/core';
 })
 export class CounterComponent {
 
+  @Input() id: number = 0;
   counters: number[] = [0, 2, 5];
 
-  addCounter(index: number) {
-    this.counters[index] >= 99 ? this.counters[index] : this.counters[index]++;
-  }
+  constructor(private eventService: EventService) { }
 
-  substractCounter(index: number) {
-    this.counters[index] <= 0 ? this.counters[index] : this.counters[index]--;
+  calculateCounter(index: number, operation: string) {
+    if (operation == "add") {
+      this.counters[index] >= 99 ? this.counters[index] : this.counters[index]++;
+    } else if (operation == "substract") {
+      this.counters[index] <= 0 ? this.counters[index] : this.counters[index]--;
+    }
+
+    this.eventService.emitChildEvent({
+      [this.id]: this.counters
+    });
   }
 
   applyStyle(index: number) {
     if (index === 0) {
-      return { color: 'DarkRed',
-      textShadow: '2px 0 var(--parchment), -2px 0 var(--parchment), 0 2px var(--parchment), 0 -2px var(--parchment), 1px 1px var(--parchment), -1px -1px var(--parchment), 1px -1px var(--parchment), -1px 1px var(--parchment)'
-     };
+      return {
+        color: 'var(--carmine)',
+        textShadow: '2px 0 var(--parchment), -2px 0 var(--parchment), 0 2px var(--parchment), 0 -2px var(--parchment), 1px 1px var(--parchment), -1px -1px var(--parchment), 1px -1px var(--parchment), -1px 1px var(--parchment)'
+      };
     } else if (index <= 2) {
-      return { color: ' yellow' }
+      return { color: 'yellow' }
     } else {
       return { color: 'white' };
     }

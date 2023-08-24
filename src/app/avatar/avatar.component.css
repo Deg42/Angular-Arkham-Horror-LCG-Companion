@@ -1,0 +1,11 @@
+.avatar-select {
+    background-color: var(--sage);
+    width: 175px;
+}
+
+.avatar {
+    width: 175px;
+    height: 210px;
+    text-align: right;
+    padding: 0;
+}

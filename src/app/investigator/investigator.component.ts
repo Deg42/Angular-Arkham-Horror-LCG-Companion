@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -6,22 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './investigator.component.html',
   styleUrls: ['./investigator.component.css']
 })
-export class InvestigatorComponent implements OnInit {
+export class InvestigatorComponent {
 
-
-  investigators: string[] = [
-    "Roland Banks",
-    "Agnes Baker",
-    "\"Malasombra\" O\'Toole",
-    "Daisy Walker",
-    "Wendy Adams"
-  ];
-  selectedInvestigator: string = "";
-  background: String = "";
-
-  ngOnInit(): void {
-    this.background = "url(../../assets/img/investigators/" + this.selectedInvestigator.replace(/['"\s]/g, '') + "Token.png) no-repeat";
-  }
-
+  @Input() id: number = 0
 
 }

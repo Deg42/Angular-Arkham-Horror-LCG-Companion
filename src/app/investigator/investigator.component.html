@@ -1,9 +1,3 @@
-<div class="avatar-select">
-    <mat-select [(value)]="selectedInvestigator" (selectionChange)="ngOnInit()" placeholder="Selecciona...">
-        <mat-option *ngFor="let investigator of investigators" [value]="investigator">{{investigator}}</mat-option>
-    </mat-select>
-</div>
-<div class="avatar" [style.background]="background">
-    <h2>{{selectedInvestigator ? selectedInvestigator : ""}}</h2>
-</div>
-<app-counter></app-counter>
+<input type="hidden" value="{{id}}" />
+<app-avatar [id]="id"></app-avatar>
+<app-counter [id]="id"></app-counter>

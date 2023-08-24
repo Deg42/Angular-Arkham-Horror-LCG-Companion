@@ -27,7 +27,7 @@
     margin-left: -.25em;
 }
 
-::ng-deep .mat-mdc-select-trigger>*  {
+::ng-deep .mat-mdc-select-trigger>* {
     margin: 0 10px;
 }
 

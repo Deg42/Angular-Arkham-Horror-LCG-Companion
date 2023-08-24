@@ -1,15 +1,21 @@
 <div class="counter-item counter-damage">
-    <button mat-mini-fab color="warn" (click)="substractCounter(0)"><mat-icon>exposure_minus_1</mat-icon></button>
+    <button mat-mini-fab color="warn"
+        (click)="calculateCounter(0, 'substract')"><mat-icon>exposure_minus_1</mat-icon></button>
     <span [ngStyle]="applyStyle(counters[0])">{{counters[0]}}</span>
-    <button mat-mini-fab color="accent" (click)="addCounter(0)"><mat-icon>exposure_plus_1</mat-icon></button>
+    <button mat-mini-fab color="accent"
+        (click)="calculateCounter(0, 'add')"><mat-icon>exposure_plus_1</mat-icon></button>
 </div>
 <div class="counter-item counter-horror">
-    <button mat-mini-fab color="warn" (click)="substractCounter(1)"><mat-icon>exposure_minus_1</mat-icon></button>
+    <button mat-mini-fab color="warn"
+        (click)="calculateCounter(1, 'substract')"><mat-icon>exposure_minus_1</mat-icon></button>
     <span [ngStyle]="applyStyle(counters[1])">{{counters[1]}}</span>
-    <button mat-mini-fab color="accent" (click)="addCounter(1)"><mat-icon>exposure_plus_1</mat-icon></button>
+    <button mat-mini-fab color="accent"
+        (click)="calculateCounter(1, 'add')"><mat-icon>exposure_plus_1</mat-icon></button>
 </div>
 <div class="counter-item counter-resources">
-    <button mat-mini-fab color="warn" (click)="substractCounter(2)"><mat-icon>exposure_minus_1</mat-icon></button>
+    <button mat-mini-fab color="warn"
+        (click)="calculateCounter(2, 'substract')"><mat-icon>exposure_minus_1</mat-icon></button>
     <span [ngStyle]="applyStyle(counters[2])">{{counters[2]}}</span>
-    <button mat-mini-fab color="accent" (click)="addCounter(2)"><mat-icon>exposure_plus_1</mat-icon></button>
+    <button mat-mini-fab color="accent"
+        (click)="calculateCounter(2, 'add')"><mat-icon>exposure_plus_1</mat-icon></button>
 </div>
