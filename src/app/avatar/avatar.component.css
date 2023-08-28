@@ -1,11 +1,12 @@
 .avatar-select {
-    background-color: var(--sage);
     width: 175px;
 }
 
 .avatar {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
     width: 175px;
     height: 210px;
     text-align: right;
-    padding: 0;
 }

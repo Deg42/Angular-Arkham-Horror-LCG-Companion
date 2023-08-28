@@ -1,6 +1,6 @@
 :root {
-    --parchment: #F1E9D2;
-    --pearl: #DDD9C1;
+    --dutch-white: #ebdfc1;
+    --dun: #D7C39E;
     --sage: #CEC8A8;
     --prussian-blue: #0A2D47;
     --hookers-green: #356A5E;
@@ -8,21 +8,17 @@
     --carmine: #941E21;
 }
 
-html,
 body {
     height: 100%;
-    background-color: var(--parchment);
-}
-
-body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url(../src/assets/img/background.jpg);
+    font-family: 'Roboto Serif', serif;
 }
 
 h2 {
     margin: 0px 2px;
-    font: normal small-caps bold 1em/1em Georgia, serif;
-    color: var(--parchment);
+    color: white;
+    font: italic 500 1.25em 'Roboto Serif', serif;
     text-shadow: -1px 0 var(--prussian-blue), 0 1px var(--prussian-blue), 1px 0 var(--prussian-blue), 0 -1px var(--prussian-blue);
 }
 

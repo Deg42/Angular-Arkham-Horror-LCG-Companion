@@ -4,7 +4,8 @@
     justify-content: space-around;
     height: 125px;
     column-gap: 5px;
-    background-color: var(--pearl);
+    background-color: var(--dun);
+    border: 1px solid var(--hookers-green);
     box-shadow: 3px 3px 2px #AAAAAA;
 }
 
@@ -23,7 +24,7 @@
     display: flex;
     flex-direction: column;
     width: 108%;
-    background-color: var(--sage);
+    background-color: var(--dutch-white);
     margin-left: -.25em;
 }
 
@@ -36,7 +37,7 @@
     flex-direction: row;
     width: 108%;
     column-gap: 1px;
-    background-color: var(--sage);
+    background-color: var(--dutch-white);
     margin-left: -.25em;
     padding: 2px 0;
 }
@@ -58,7 +59,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-around !important;
-    border-left: 2px groove var(--pearl);
+    border-left: 2px groove var(--dun);
 }
 
 .caos-reveal>* {

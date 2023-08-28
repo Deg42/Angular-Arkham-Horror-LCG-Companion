@@ -14,6 +14,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { CounterComponent } from './counter/counter.component';
 import { CaosComponent } from './caos/caos.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AvatarComponent } from './avatar/avatar.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule, 
+    MatDialogModule
   ],
   providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { subscriptSizing: 'dynamic' } }],
   bootstrap: [AppComponent]

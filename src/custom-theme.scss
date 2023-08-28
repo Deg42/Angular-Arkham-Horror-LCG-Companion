@@ -8,12 +8,14 @@ $primary: mat.define-palette($md-prussianblue, 500);
 $accent: mat.define-palette($md-hookersgreen, 500);
 $warn: mat.define-palette($md-carmine, 500);
 
-$angular-Arkham-Horror-LCG-Companion-theme: mat.define-light-theme((
-  color: (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-  )
-));
+$angular-Arkham-Horror-LCG-Companion-theme: mat.define-light-theme((color: (primary: $primary,
+        accent: $accent,
+        warn: $warn,
+      ),
+      typography: mat.define-typography-config(
+        $font-family: 'Roboto Serif'
+      ),
+      density: 0,
+    ));
 
 @include mat.all-component-themes($angular-Arkham-Horror-LCG-Companion-theme);

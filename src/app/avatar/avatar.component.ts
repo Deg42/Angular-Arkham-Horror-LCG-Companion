@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EventService } from '../service/event.service';
+import { LocalStorageService } from '../service/local-storage.service';
 
 @Component({
   selector: 'app-avatar',
@@ -17,16 +17,19 @@ export class AvatarComponent implements OnInit {
     "Daisy Walker",
     "Wendy Adams"
   ];
-  selectedInvestigator: string = "Roland Banks";
+  selectedInvestigator: string = "";
   background: String = "";
 
 
-  constructor(private eventService: EventService) { }
+  constructor(private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
-    this.background = "url(../../assets/img/investigators/" + this.selectedInvestigator.replace(/['"\s]/g, '') + "Token.png) no-repeat";
-    this.eventService.emitChildEvent({
-      [this.id]: this.selectedInvestigator
-    });
+    this.selectedInvestigator = this.localStorageService.getItem(`investigator${this.id}`) ?? this.selectedInvestigator;
+    this.changeInvestigator();
+  }
+
+  changeInvestigator() {
+    this.selectedInvestigator != "" ? this.localStorageService.setItem(`investigator${this.id}`, this.selectedInvestigator) : null;
+    this.background = `url(../../assets/img/investigators/${this.selectedInvestigator.replace(/['"\s]/g, '')}Token.png) no-repeat`;
   }
 }

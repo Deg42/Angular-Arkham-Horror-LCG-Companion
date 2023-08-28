@@ -14,7 +14,7 @@ button {
 
 span {
     font: normal small-caps bold 1.25em/0.5em Georgia, serif;
-    color: var(--parchment);
+    color: var(--dutch-white);
     text-shadow: 2px 0 var(--prussian-blue), -2px 0 var(--prussian-blue), 0 2px var(--prussian-blue), 0 -2px var(--prussian-blue),
         1px 1px var(--prussian-blue), -1px -1px var(--prussian-blue), 1px -1px var(--prussian-blue), -1px 1px var(--prussian-blue);
 }

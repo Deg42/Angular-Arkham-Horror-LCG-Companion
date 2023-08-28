@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { LocalStorageService } from '../service/local-storage.service';
 
 @Component({
   selector: 'app-caos',
@@ -38,47 +39,61 @@ export class CaosComponent implements OnInit {
 
   chaosBag: string[] = ["Plus1", "Plus1", "0", "0", "0", "Minus1", "Minus1", "Minus1", "Minus2", "Minus2", "Skull", "Skull", "Cultist", "Tablet", "Autofail", "ElderSign"];
 
-  history: string[] = ["ElderSign", "ElderSign", "ElderSign"];
+  actual: string = 'Empty';
+  history: string[] = ['Empty', 'Empty', 'Empty'];
 
   flipTokenState = 'before';
-  before = 'Minus1';
-  after = 'Cultist';
+  before = 'Empty';
+  after = '';
 
-  rotateButtonState = 'before';
+  constructor(private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
+    this.selectedDifficulty = this.localStorageService.getItem("difficulty") ?? this.selectedDifficulty;
+    this.history = this.localStorageService.getItem("history") ?? this.history;
+    this.actual = this.localStorageService.getItem("actual") ?? this.actual;
+
+    this.before = this.actual;
+    this.after = this.actual;
+
+    this.selectDifficulty();
+  }
+
+  selectDifficulty() {
     this.chaosBag = [];
     switch (this.selectedDifficulty) {
-      case "Fácil":
+      case this.difficulties[0]:
         this.chaosBag.push("Plus1", "Plus1", "0", "0", "0", "Minus1", "Minus1", "Minus1", "Minus2", "Minus2", "Skull", "Skull", "Cultist", "Tablet", "Autofail", "ElderSign");
         break;
-      case "Normal":
+      case this.difficulties[1]:
         this.chaosBag.push("Plus1", "0", "0", "Minus1", "Minus1", "Minus1", "Minus2", "Minus2", "Minus3", "Minus4", "Skull", "Skull", "Cultist", "Tablet", "Autofail", "ElderSign");
         break;
-      case "Difícil":
+      case this.difficulties[2]:
         this.chaosBag.push("0", "0", "0", "Minus1", "Minus1", "Minus2", "Minus2", "Minus3", "Minus3", "Minus4", "Minus5", "Skull", "Skull", "Cultist", "Tablet", "Autofail", "ElderSign");
         break
-      case "Experto":
+      case this.difficulties[3]:
         this.chaosBag.push("0", "Minus1", "Minus1", "Minus2", "Minus2", "Minus3", "Minus3", "Minus4", "Minus4", "Minus5", "Minus6", "Minus8", "Skull", "Skull", "Cultist", "Tablet", "Autofail", "ElderSign");
         break
     }
-    console.log(this.chaosBag);
 
+    this.localStorageService.setItem("difficulty", this.selectedDifficulty)
   }
 
   pullOutToken() {
-    this.rotateButtonState == 'before' ? this.rotateButtonState = 'after' : this.rotateButtonState;
-    setTimeout(() => { this.rotateButtonState = 'before' }, 600);
-
     if (this.flipTokenState == 'before') {
       this.after = this.chaosBag[Math.floor(Math.random() * this.chaosBag.length)];
       this.flipTokenState = 'after';
+      this.actual = this.after
       this.history.push(this.before);
     } else if (this.flipTokenState = 'after') {
       this.before = this.chaosBag[Math.floor(Math.random() * this.chaosBag.length)];
       this.flipTokenState = 'before';
+      this.actual = this.before;
       this.history.push(this.after);
     }
+
+    this.localStorageService.setItem("actual", this.actual)
     this.history.length > 3 ? this.history.shift() : '';
+    this.localStorageService.setItem("history", this.history)
   }
 }

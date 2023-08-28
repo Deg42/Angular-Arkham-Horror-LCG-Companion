@@ -1,10 +1,11 @@
-mat-toolbar {
-    margin-bottom: 5px;
-}
-
 mat-toolbar>* {
     flex: 1 1 auto;
     width: 0;
+}
+
+h1 {
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .button-container {
@@ -23,10 +24,11 @@ main {
     position: relative;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    margin-bottom: 5px;
+    margin: 15px;
 }
 
 app-investigator {
-    background-color: var(--pearl);
+    background-color: var(--dun);
+    border: 1px solid var(--hookers-green);
     box-shadow: 3px 3px 2px #AAAAAA;
 }
