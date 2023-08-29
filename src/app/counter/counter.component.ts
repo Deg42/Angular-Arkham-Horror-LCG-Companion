@@ -31,7 +31,7 @@ export class CounterComponent implements OnInit {
     if (index === 0) {
       return {
         color: 'var(--carmine)',
-        textShadow: '2px 0 var(--dutch-white), -2px 0 var(--dutch-white), 0 2px var(--dutch-white), 0 -2px var(--dutch-white), 1px 1px var(--dutch-white), -1px -1px var(--dutch-white), 1px -1px var(--dutch-white), -1px 1px var(--dutch-white)'
+        textShadow: '1px 1px var(--dutch-white), -1px -1px var(--dutch-white), 1px -1px var(--dutch-white), -1px 1px var(--dutch-white)'
       };
     } else if (index <= 2) {
       return { color: 'yellow' }

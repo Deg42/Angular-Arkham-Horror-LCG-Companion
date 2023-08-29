@@ -16,7 +16,7 @@
     <div class="caos-reveal">
         <span class="caption">Ficha de caos</span>
         <button mat-fab color="primary" (click)='pullOutToken()'
-            [@rotating]="flipTokenState"><mat-icon>swipe_up</mat-icon></button>
+            [@rotating]="buttonState"><mat-icon>swipe_up</mat-icon></button>
     </div>
     <div class="caos-token"
         [@flipping]="{value: flipTokenState, params : {tokenImageBefore: before, tokenImageAfter: after }}"></div>

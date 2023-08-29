@@ -16,8 +16,8 @@ import { LocalStorageService } from '../service/local-storage.service';
         backgroundImage: 'url("../../assets/img/chaosBag/Chaos{{tokenImageAfter}}.png")',
         transform: 'rotateY(360deg)'
       }), { params: { tokenImageAfter: ' ' } }),
-      transition('before => after', animate(500)),
-      transition('after => before', animate(500))
+      transition('before => after', animate('0.75s ease-out')),
+      transition('after => before', animate('0.75s ease-out'))
     ]),
 
     trigger('rotating', [
@@ -25,10 +25,10 @@ import { LocalStorageService } from '../service/local-storage.service';
         transform: 'rotate(0)'
       })),
       state('after', style({
-        transform: 'rotate(60deg)'
+        transform: 'rotate(70deg)'
       })),
       transition('before => after', animate('0.5s ease-in')),
-      transition('after => before', animate('0.5s ease-out')),
+      transition('after => before', animate('1s ease-out')),
     ])
   ]
 })
@@ -45,6 +45,8 @@ export class CaosComponent implements OnInit {
   flipTokenState = 'before';
   before = 'Empty';
   after = '';
+
+  buttonState = 'before'
 
   constructor(private localStorageService: LocalStorageService) { }
 
@@ -80,20 +82,27 @@ export class CaosComponent implements OnInit {
   }
 
   pullOutToken() {
+    let result = this.chaosBag[Math.floor(Math.random() * this.chaosBag.length)];
+
     if (this.flipTokenState == 'before') {
-      this.after = this.chaosBag[Math.floor(Math.random() * this.chaosBag.length)];
+      this.after = result;
       this.flipTokenState = 'after';
       this.actual = this.after
       this.history.push(this.before);
     } else if (this.flipTokenState = 'after') {
-      this.before = this.chaosBag[Math.floor(Math.random() * this.chaosBag.length)];
+      this.before = result;
       this.flipTokenState = 'before';
       this.actual = this.before;
-      this.history.push(this.after);
+      this.history.push(this.after);  
     }
-
+    
     this.localStorageService.setItem("actual", this.actual)
     this.history.length > 3 ? this.history.shift() : '';
     this.localStorageService.setItem("history", this.history)
+    
+    this.buttonState = 'after'
+    setTimeout(() => {
+      this.buttonState = 'before';
+    }, 500);
   }
 }
